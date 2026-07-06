@@ -7,5 +7,3 @@ The main goal is to strengthen my understanding of web development fundamentals 
 ## Purpose
 
 This repository serves as a personal study log. The code may evolve over time as I improve my skills and explore new concepts.
-
-

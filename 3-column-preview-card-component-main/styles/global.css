@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+:root {
+    --gold: hsl(31, 77%, 52%);
+    --cyan: hsl(184, 100%, 22%);
+    --green: hsl(179, 100%, 13%);
+    --white: hsla(0, 0%, 100%, 0.75); /* paragraphs */
+    --grey: hsl(0, 0%, 95%); /* background, headings and buttons */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Deca', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--white);
+
+    background-color: var(--grey);
+}
+
+h2 {
+    font-family: 'Big Shoulders', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--grey);
+    text-transform: uppercase;
+}
+
+img {
+    width: 50px;
+    height: auto;
+}
+
+button {
+    font-family: 'Lexend Deca', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    
+    cursor: pointer;
+    background-color: var(--grey);
+
+    border: 0px;
+    border-radius: 35px;
+
+    width: 125px;
+    padding: 10px;
+}

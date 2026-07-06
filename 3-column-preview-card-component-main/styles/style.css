@@ -1,0 +1,82 @@
+main {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem 0;
+}
+
+#main-card {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+    overflow: hidden;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.category-card {
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sedan {
+    background-color: var(--gold);
+}
+
+.suv {
+    background-color: var(--cyan);
+}
+
+.luxury {
+    background-color: var(--green);
+}
+
+.sedan>button {
+    color: var(--gold);
+}
+
+.suv>button {
+    color: var(--cyan);
+}
+
+.luxury>button {
+    color: var(--green);
+}
+
+button:hover {
+    outline: 1px solid var(--grey);
+    background-color: inherit;
+    color: var(--grey);
+}
+
+@media (min-width: 768px) {
+    #main-card {
+        flex-direction: row;
+    }
+
+    .category-card {
+        gap: 30px
+    }
+}
+
+@media (min-width: 1024px) {
+    #main-card {
+        max-width: 800px;
+    }
+
+    .category-card {
+        gap: 25px;
+        justify-content: center;
+    }
+
+    button {
+        margin-top: 40px;
+    }
+}
