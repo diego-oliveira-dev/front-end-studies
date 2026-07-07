@@ -1,0 +1,94 @@
+.main-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    width: 350px;
+}
+
+.profile-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.background {
+    position: absolute;
+    width: 800px;
+}
+
+.top-bg-img {
+    left: -325px;
+    top: -400px;
+}
+
+.bottom-bg-img {
+    right: -325px;
+    bottom: -400px;
+}
+
+.background-img > img {
+    width: 100%;
+}
+
+.profile-img {
+    position: absolute;
+    top: 90px;
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.profile-img > img {
+    border: 6px solid white;
+    border-radius: 50%;
+}
+
+.header-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    margin-top: 65px;
+    padding-bottom: 20px;
+}
+
+.name-and-age {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    gap: 10px;
+}
+
+.name-and-age p {
+    font-size: 20px;
+}
+
+.footer-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+    border-top: 2px solid var(--light-grey);
+    padding: 20px 30px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.data h2 {
+    margin: auto;
+}
+
+.data p {
+    margin: auto;
+    font-size: 15px;
+}
