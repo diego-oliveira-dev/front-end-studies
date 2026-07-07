@@ -1,0 +1,52 @@
+.main-card {
+    background-color: var(--medium-grey);
+    border-radius: 10px;
+    width: 325px;
+    overflow: hidden;
+    padding: 25px;
+    gap: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-pic {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-pic img {
+    border-radius: 50%;
+    width: 100px;
+}
+
+.info {
+    line-height: 1.5;
+}
+
+.info h2 {
+    text-align: center;
+}
+
+.info p {
+    text-align: center;
+    color: var(--green);
+}
+
+.description {
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 15px;
+}
