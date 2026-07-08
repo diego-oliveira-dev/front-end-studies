@@ -1,0 +1,76 @@
+.main-card {
+    width: min(500px, 100%);
+}
+
+.content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.preparation {
+    background-color: var(--rose-200);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.instructions {
+    border-top: 1px solid var(--stone-150);
+    border-bottom: 1px solid var(--stone-150);
+    padding: 20px 0 20px 0;
+}
+
+.nutrition p {
+    margin: 15px 0 15px 0;
+}
+
+.nutrition-table {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nutrition-table th, .nutrition-table td {
+    padding: 10px 10px 10px 30px;
+    text-align: left;
+}
+
+.nutrition-table td {
+    font-weight: 600;
+    color: var(--brown-800)
+}   
+
+.nutrition-table th {
+    font-weight: 300;
+}   
+
+.row-with-border {
+    border-top: 1px solid var(--stone-150);
+    border-bottom: 1px solid var(--stone-150);
+}
+
+@media (min-width: 768px) {
+    .main-card {
+        margin: 4rem 0;
+        padding: 30px;
+        background-color: var(--white);
+        border-radius: 15px;
+        width: 700px;
+    }
+
+    .content {
+        padding: 30px 0 0 0;
+    }
+}
