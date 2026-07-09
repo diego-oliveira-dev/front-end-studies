@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+    <main>
+        <section class="main-card">
+            <div class="moves">
+                <div class="player-move">
+                    <img class="player-image" src="images/rock.png" alt="player-move-image">
+                </div>
+                <div class="computer-move">
+                    <img class="computer-image" src="images/rock.png" alt="computer-move-image">
+                </div>
+            </div>
+            <div>
+                <h1 class="result"></h1>
+            </div>
+            <div class="score">
+                <h2>Let's Play!!</h2>
+            </div>
+            <div class="possible-moves">
+                <div class="buttons">
+
+                    <button 
+                    onclick="playGame('rock');"
+                    class="move-button rock">
+                        <img src="images/rock.png" alt="rock-move-image">
+                        <p>Rock</p>
+                    </button>
+                    
+                    <button 
+                    onclick="playGame('paper');"
+                    class="move-button paper">
+                        <img src="images/paper.png" alt="paper-move-image">
+                        <p>Paper</p>
+                    </button>
+                    
+                    <button 
+                    onclick="playGame('scissors');" 
+                    class="move-button scissors">
+                        <img src="images/scissors.png" alt="scissors-move-image">
+                        <p>Scissors</p>
+                    </button>
+
+                </div>
+                <div>
+                    <button 
+                    onclick="resetScore();"
+                    class="reset-button">Reset Score</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

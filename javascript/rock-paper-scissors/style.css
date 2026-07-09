@@ -1,0 +1,69 @@
+.main-card {
+    /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px; */
+
+    width: min(350px, 100%);
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.moves {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    height: 150px;
+}
+
+.player-image {
+    transform: rotate(90deg);
+    width: 100%;
+}
+
+.computer-image {
+    transform: rotate(-90deg);
+    width: 100%;
+}
+
+
+.score, .result {
+    text-align: center;
+}
+
+.possible-moves {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.reset-button {
+    width: fit-content;
+    background-color: var(--purple);
+    opacity: 0.65;
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: white;
+}
+
+.reset-button:hover {
+    opacity: 1;
+}
+
+.buttons {
+    display: flex;
+    gap: 30px;
+}
+
+.move-button {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
