@@ -13,16 +13,16 @@
 </head>
 
 <body>
-    
+
     <p>Todo List Practice</p>
 
     <input type="text" placeholder="Todo name" class="js-name-input" onkeydown="handleKeydown(event);">
     <input type="date" class="js-date-input">
-    
-    <button onclick="addTodo();">Add</button>    
+
+    <button onclick="addTodo();">Add</button>
     <button onclick="resetList();">Reset List</button>
 
-    <div class="js-todo-list1"></div>
+    <div class="js-todo-list"></div>
 
     <script>
         let list = [];
@@ -30,19 +30,19 @@
 
         function renderList() {
             let displayList = '';
-            for (let i = 0; i < list.length; i++) {
-                const {name, dueDate} = list[i];
+            list.forEach((listObject, index) => {
+                const { name, dueDate } = listObject;
                 displayList += `
                 <p>
                     ${name} // ${dueDate}
                     <button onclick="
-                        list.splice(${i}, 1);
+                        list.splice(${index}, 1);
                         renderList();
                     ">Delete</button>
                 </p>
                 `;
-            }
-            document.querySelector('.js-todo-list1')
+            });
+            document.querySelector('.js-todo-list')
                 .innerHTML = displayList;
         }
 
@@ -52,7 +52,7 @@
 
             const name = nameInput.value;
             let dueDate = dateInput.value;
-            
+
             if (dateInput.value === '') {
                 const now = new Date();
                 const day = String(now.getDate()).padStart(2, '0');
@@ -61,8 +61,8 @@
 
                 dueDate = `${year}-${month}-${day}`;
             }
-            
-            list.push({name, dueDate});
+
+            list.push({ name, dueDate });
             nameInput.value = '';
             renderList();
         }
