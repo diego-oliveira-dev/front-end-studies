@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        * {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <p>Todo List Practice</p>
+
+    <input type="text" placeholder="Todo name" class="js-name-input" onkeydown="handleKeydown(event);">
+    <input type="date" class="js-date-input">
+    
+    <button onclick="addTodo();">Add</button>    
+    <button onclick="resetList();">Reset List</button>
+
+    <div class="js-todo-list1"></div>
+
+    <script>
+        let list = [];
+        renderList();
+
+        function renderList() {
+            let displayList = '';
+            for (let i = 0; i < list.length; i++) {
+                const {name, dueDate} = list[i];
+                displayList += `
+                <p>
+                    ${name} // ${dueDate}
+                    <button onclick="
+                        list.splice(${i}, 1);
+                        renderList();
+                    ">Delete</button>
+                </p>
+                `;
+            }
+            document.querySelector('.js-todo-list1')
+                .innerHTML = displayList;
+        }
+
+        function addTodo() {
+            const nameInput = document.querySelector('.js-name-input');
+            const dateInput = document.querySelector('.js-date-input');
+
+            const name = nameInput.value;
+            let dueDate = dateInput.value;
+            
+            if (dateInput.value === '') {
+                const now = new Date();
+                const day = String(now.getDate()).padStart(2, '0');
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const year = String(now.getFullYear());
+
+                dueDate = `${year}-${month}-${day}`;
+            }
+            
+            list.push({name, dueDate});
+            nameInput.value = '';
+            renderList();
+        }
+
+        function handleKeydown(event) {
+            if (event.key === 'Enter') addTodo();
+        }
+
+        function resetList() {
+            list = [];
+            renderList();
+        }
+    </script>
+</body>
+
+</html>
