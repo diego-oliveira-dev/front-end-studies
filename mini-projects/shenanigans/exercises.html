@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,22 @@
         * {
             font-size: 1.2rem;
         }
+
+        .menu {
+            display: none;
+            position: absolute;
+            background-color: red;
+            border: 1px solid black;
+            width: fit-content;
+        }
+
+        .dropdown {
+            background-color: aqua;
+            width: fit-content;
+        }
     </style>
 </head>
+
 <body>
     <p>Youtube Subscribe Button</p>
     <button class="js-subscribe-button" onclick="
@@ -25,7 +40,41 @@
     ">Calculate</button>
     <p class="js-total-cost"></p>
 
+    <div class="dropdown">
+        <button class="options-button">...</button>
+        <div class="menu">
+            <div class="menu-item">Edit</div>
+            <div class="menu-item">Delete</div>
+            <div class="menu-item">Info</div>
+        </div>
+    </div>
+    <p>teste</p>
+
     <script>
+        const optionsButton = document.querySelector('.options-button');
+        const menu = document.querySelector('.menu');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        optionsButton.addEventListener(
+            'click', () => {
+                if (menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                } else {
+                    menu.style.display = 'block';
+                }
+            }
+        );
+
+        menuItems.forEach((item) => {
+            item.addEventListener('click', () => menu.style.display = 'none')
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.dropdown')) {
+                menu.style.display = 'none';
+            }
+        })
+
         function handleCostKeydown(event) {
             if (event.key === 'Enter') calculateTotal();
         }
@@ -33,7 +82,7 @@
         function calculateTotal() {
             const inputElement = document.querySelector('.js-cost-input');
             let cost = Number(inputElement.value);
-            
+
             if (cost < 40) {
                 cost += 10;
             }
@@ -41,10 +90,10 @@
             document.querySelector('.js-total-cost').innerHTML = `Total cost: $${cost}`;
 
         }
-        
+
         function subscribe() {
             const currentState = document.querySelector('.js-subscribe-button');
-            
+
             if (currentState.innerText === 'Subscribe') {
                 currentState.innerHTML = 'Subscribed';
             } else {
@@ -53,4 +102,5 @@
         }
     </script>
 </body>
+
 </html>
