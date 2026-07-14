@@ -1,0 +1,76 @@
+.main-card {
+    background-color: var(--dark-grey-card);
+    width: max(350px, 80%);
+    max-width: 450px;
+    padding: 30px;
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.input input {
+    flex: 1;
+}
+
+.input input:focus {
+    outline: none;
+    border-bottom-color: var(--white);
+    transition: .2s;
+}
+
+.input button {
+    padding: 10px 20px;
+    flex-shrink: 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 7px;
+
+    border: 0;
+    border-radius: 10px;
+}
+
+.item button {
+    margin-left: auto;
+}
+
+.item button:hover {
+    background-color: var(--wine-red);
+    border-color: var(--wine-red);
+    font-weight: bolder;
+}
+
+input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--wine-red);
+    flex-shrink: 0;
+}
+
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked+p {
+    text-decoration: line-through;
+    opacity: .7;
+}
+

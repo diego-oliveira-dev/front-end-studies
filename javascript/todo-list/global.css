@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --black-bg: #161616;
+    --dark-grey-card: #292928;
+    --dark-grey-details: #b6b6b62f;
+    --light-grey-body: #969494;
+    --white: #F7F6F7;
+    --wine-red: #AE2F3E;
+
+    --body-font: 'Roboto', 'Times New Roman', Times, serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: var(--black-bg);
+    padding: 1.5rem 0;
+
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: 18px;
+    color: var(--light-grey-body);
+}
+
+h2 {
+    color: var(--white);
+    font-weight: 500;
+}
+
+input {
+    background-color: var(--dark-grey-card);
+    border: 0;
+    border-bottom: 2px solid var(--dark-grey-details);
+    padding: 0 5px;
+
+    font-size: 16px;
+    color: var(--white);
+}
+
+input::placeholder {
+    font-family: var(--body-font);
+    color: var(--light-grey-body);
+}
+
+input:hover {
+    cursor: text;
+}
+
+button {
+    background-color: var(--dark-grey-card);
+    border: 2px solid var(--dark-grey-details);
+    border-radius: 10px;
+    padding: 5px 10px;
+
+    font-family: inherit;
+    color: inherit;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--black-bg);
+    transition: .2s;
+}

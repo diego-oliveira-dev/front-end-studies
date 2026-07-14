@@ -1,96 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-    <style>
-        * {
-            font-size: 1.2rem;
-        }
-    </style>
+    <title>To-do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global.css">
 </head>
-
 <body>
+    
+    <main>
+        <section class="main-card">
+            <div class="card-header">
+                <h2>To-do List</h2>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Add something" class="js-item-input">
+                <button class="add-button js-add-button">Add</button>
+            </div>
+            <div class="list"></div>
+        </section>
+    </main>
 
-    <p>Todo List Practice</p>
-
-    <input type="text" placeholder="Todo name" class="js-name-input">
-    <input type="date" class="js-date-input">
-
-    <button class="js-add-button">Add</button>
-    <button class="js-reset-button">Reset List</button>
-
-    <div class="js-todo-list"></div>
-
-    <script>
-        let list = [];
-        renderList();
-
-        function renderList() {
-            let displayList = '';
-            list.forEach((listObject, index) => {
-                const { name, dueDate } = listObject;
-                displayList += `
-                <p>
-                    ${name} // ${dueDate}
-                    <button class="js-delete-button"
-                    >Delete</button>
-                </p>
-                `;
-            });
-
-            document.querySelector('.js-todo-list')
-                .innerHTML = displayList;
-
-            document.querySelectorAll('.js-delete-button').forEach((deleteButton, index) => {
-                deleteButton.addEventListener('click', () => {
-                    list.splice(index, 1);
-                    renderList();
-                })
-            })
-        }
-
-        document.querySelector('.js-add-button').addEventListener('click', () => addTodo());
-
-        function addTodo() {
-            const nameInput = document.querySelector('.js-name-input');
-            const dateInput = document.querySelector('.js-date-input');
-
-            const name = nameInput.value;
-            let dueDate = dateInput.value;
-
-            if (dateInput.value === '') {
-                const now = new Date();
-                const day = String(now.getDate()).padStart(2, '0');
-                const month = String(now.getMonth() + 1).padStart(2, '0');
-                const year = String(now.getFullYear());
-
-                dueDate = `${year}-${month}-${day}`;
-            }
-
-            list.push({ name, dueDate });
-            nameInput.value = '';
-            renderList();
-        }
-
-        document.querySelector('.js-name-input').addEventListener('keydown', (event) => handleKeydown(event));
-
-
-        function handleKeydown(event) {
-            if (event.key === 'Enter') {
-                addTodo();
-            };
-        }
-
-        document.querySelector('.js-reset-button').addEventListener('click', () => resetList());
-
-        function resetList() {
-            list = [];
-            renderList();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
