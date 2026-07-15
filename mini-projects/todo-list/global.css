@@ -53,7 +53,7 @@ input::placeholder {
     color: var(--light-grey-body);
 }
 
-input:hover {
+input[type="text"]:hover {
     cursor: text;
 }
 
@@ -70,5 +70,7 @@ button {
 button:hover {
     cursor: pointer;
     background-color: var(--black-bg);
-    transition: .2s;
+    border: 2px solid var(--white);
+    color: var(--white);
+    transition: .3s;
 }
